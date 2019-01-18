@@ -1,0 +1,65 @@
+<mat-sidenav-container >
+
+  <!-- side nav -->
+  <mat-sidenav mode="over" #sidenav>
+    <button class="margin-bottom-5" mat-menu-item  routerLink="{{link.path}}" *ngFor="let link of navLinks; let i=index">
+      <mat-icon>{{link.icon}}</mat-icon>{{link.label}}
+    </button>
+  </mat-sidenav>
+  <!-- horizontal nav & main content -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button mat-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>{{title}}</span>
+        <div fxFlex></div>
+        <button mat-button>
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-button>
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- app main content -->
+    <div class="padding-20">
+      <app-material-features></app-material-features>
+
+    </div>
+
+    <!--<mat-card>
+        <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center" >
+          <div *ngFor="let article of articles; let i=index">
+            <mat-card style="margin-bottom: 3%; width:384px; cursor: pointer" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
+              <img mat-card-image src="{{article.image}}" style="height: 200px">
+              <mat-card-content>
+                <mat-card-title style="font-size: 21px;">
+                  {{article.title}}
+                </mat-card-title>
+              </mat-card-content>
+              <mat-card-actions>
+                <mat-card-header>
+                  <img mat-card-avatar="" src="{{article.author.avatar}}">
+                  <mat-card-title>
+                    {{article.author.name}}
+                  </mat-card-title>
+                  <mat-card-subtitle>
+                    {{article.author.job}}
+                  </mat-card-subtitle>
+                </mat-card-header>
+                <div fxFlex></div>
+                <button mat-button matTooltip="delete" (click)="openDialog()">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card>-->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
